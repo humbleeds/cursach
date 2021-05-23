@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load tailwind_filters %}
+{% load static %}
+
+{% block content %}
+<div class="mt-10 max-w-lg mx-auto">
+    <div class="mb-4 flex justify-center">
+        <h1 class="font-mono text-4xl">LogIn To RawFitness</h1>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="w-full bg-gray-800 hover:bg-gray-900 px-3 py-2 rounded-md text-white" type="submit">Login</button>
+        
+    </form>
+</div>
+{% endblock content %}
